@@ -1,0 +1,33 @@
+.covid-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .dropdown-container {
+    margin-bottom: 20px;
+  }
+  
+  .data-container p {
+    margin: 5px 0;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  

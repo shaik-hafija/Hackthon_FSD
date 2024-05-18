@@ -1,0 +1,102 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="expense.css">
+</head>
+<body>
+    <input type="text" id="amountInput" placeholder="Enter Amount">
+    <input type="text" id="catInput" placeholder="Enter Category">
+    <input type="date" id="dateInput" >
+    <div id="display"></div>
+    <table id="row">
+        <td style="border: 1px solid;"></td>
+    </table>
+    <button onclick="addExpense()">Insert</button>
+    <button onclick="deleteExpense()">Delete</button>
+
+    <script src="expense.js"></script>
+    <script>
+        function addExpense() {
+            const amount = parseInt(ex.amountInputHtml.value);
+            const category=ex.catInputHtml.value
+            console.log(category)
+            const edate=ex.dateInputHtml.value
+            const details = { amount,category,edate };
+            ex.addDetails(details);
+        }
+        function deleteExpense(index) {
+            ex.deleteDetails(index);
+        }
+
+        function editExpense(index) {
+            ex.editDetails(index);
+        }
+    </script>
+</body>
+</html> -->
+<!-- https://github.com/shaik-hafija/Hackthon_FSD -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="expense.css">
+    <title>Expense Tracker</title>
+   
+</head>
+<body>
+    <div class="container">
+    <h1 style="text-align: center;color:#5AB2FF;">Expense Tracker</h1>
+    <form id="expenseForm">
+        <input type="number" id="amountInput" placeholder="Enter Amount" required>
+        <input type="text" id="catInput" placeholder="Enter Category" required>
+        <input type="date" id="dateInput" required>
+        <button type="submit">Add Expense</button>
+    </form>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="expenseTableBody">
+        </tbody>
+    </table>
+    <div id="totalPrice"></div>
+
+
+    <script src="expense.js"></script>
+    <script>
+
+        document.getElementById('expenseForm')?.addEventListener('submit', function(event) {
+            event.preventDefault();
+            addExpense();
+        });
+
+        function addExpense() {
+            const amount = parseFloat(ex.amountInputHtml.value);
+            const category = ex.catInputHtml.value;
+            const edate = new Date(ex.dateInputHtml.value);
+            const details = { amount, category, edate };
+            ex.addDetails(details);
+            ex.renderTable();
+        }
+
+        function deleteExpense(index) {
+            ex.deleteDetails(index);
+        }
+
+        function editExpense(index) {
+            ex.editDetails(index);
+        }
+    </script>
+</body>
+</html>
